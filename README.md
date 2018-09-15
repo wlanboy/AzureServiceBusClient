@@ -4,10 +4,10 @@ Spring Boot Azure Service Bus Client (MVC and REST)
 ## Dependencies
 At least: Java 8 and Maven 3.5
 
-## Build Simple REST HATEOS Service
+## Build Simple Service Bus Client 
 mvn package -DskipTests=true
 
-## Run Simple REST HATEOS Service
+## Run Simple Service Bus Client 
 ### Environment variables
 #### EUREKA_ZONE 
 Default value: http://127.0.0.1:8761/eureka/
