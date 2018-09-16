@@ -1,6 +1,6 @@
 spring:
   application:
-    name: simpleservice
+    name: azureservicebusclient
   cloud:
     config:
       failFast: false
@@ -26,7 +26,7 @@ feign:
     
 azure:
   servicebus:
-    connection-string: Endpoint=add-your-own-endpoint
+    connection-string: 
     queue-name: testqueue
     queue-receive-mode: peeklock
     
