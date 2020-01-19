@@ -1,8 +1,5 @@
 package com.wlanboy.demo.controller;
 
-import static org.springframework.hateoas.core.DummyInvocationUtils.methodOn;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
@@ -43,7 +40,6 @@ public class MesageController {
 		}
 		
 		MessageParameters helloString = new MessageParameters(new Long(counter.incrementAndGet()), text);
-		helloString.add(linkTo(methodOn(MesageController.class).sendmessage(text)).withSelfRel());
 
 		logger.info("HelloParameters created.");
 		return new ResponseEntity<MessageParameters>(helloString, HttpStatus.OK);
@@ -57,7 +53,6 @@ public class MesageController {
 		text = serviceBus.getLatestMessage();
 		
 		MessageParameters helloString = new MessageParameters(new Long(counter.incrementAndGet()), text);
-		helloString.add(linkTo(methodOn(MesageController.class).nextmessage()).withSelfRel());
 
 		logger.info("HelloParameters created.");
 		return new ResponseEntity<MessageParameters>(helloString, HttpStatus.OK);

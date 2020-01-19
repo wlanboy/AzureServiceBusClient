@@ -9,9 +9,6 @@ mvn package -DskipTests=true
 
 ## Run Simple Service Bus Client 
 ### Environment variables
-#### EUREKA_ZONE 
-Default value: http://127.0.0.1:8761/eureka/
-Defining all available Eureka Instances.
 
 ### Windows
 java -jar target\AzureServiceBus.jar
@@ -23,4 +20,4 @@ java -jar target\AzureServiceBus.jar
 docker build -t azureservicebus:latest . --build-arg JAR_FILE=./target/AzureServiceBus.jar
 
 ## Docker run
-docker run --name azureservicebus -d -p 8001:8001 --link serviceregistry:serviceregistry -v /tmp:/tmp -e EUREKA_ZONE=$EUREKA_ZONE azureservicebus:latest
+docker run --name azureservicebus -d -p 8001:8001 -v /tmp:/tmp azureservicebus:latest
